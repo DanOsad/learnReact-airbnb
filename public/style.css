@@ -87,12 +87,29 @@ body {
 /* CARDS */
 /*  */
 
+.card--list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 20px;
+    margin-left: 16px;
+    margin-top: 25px;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.card--list::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 .card {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    margin-left: 36px;
-    margin-top: 45px;
+    position: relative;
 }
 
 .card > * {
@@ -113,14 +130,21 @@ body {
     display: block;
     z-index: -1;
     font-size: 11px;
-    /* width: 61px;
-    height: 20px; */
     border: 1px solid black;
     border-radius: 2px;
     background: #FFFFFF;
     margin-left: 6px;
     padding: 5px 6px;
-    /* none */
+}
+
+.card--badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background-color: white;
+    padding: 5px 7px;
+    border-radius: 2px;
+    font-weight: bold;
 }
 
 .card--rating--bar {
@@ -137,10 +161,6 @@ body {
     width: 12px;
 }
 
-.card--rating--value {
- /* none */
-}
-
 .card--rating--reviews {
     color: #918E9B;
 }
@@ -151,11 +171,6 @@ body {
 
 .card--rating--location {
     color: #918E9B;
-}
-
-.card--title {
-    /* none */
-
 }
 
 .card--price--bar {
